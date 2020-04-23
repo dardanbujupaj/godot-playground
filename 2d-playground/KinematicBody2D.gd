@@ -29,7 +29,8 @@ func _process(delta):
 	else:
 		velocity.y += 5
 	
-	
+	if Input.is_key_pressed(KEY_TAB):
+		$AnimatedSprite2.play("attack")
 	
 	# maximum speed
 	var max_speed = 80
@@ -63,3 +64,4 @@ func _process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	pass
+

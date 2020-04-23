@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://lowpoly/Character.gd" type="Script" id=1]
+[ext_resource path="res://lowpoly/character.mesh" type="ArrayMesh" id=2]
+[ext_resource path="res://lowpoly/character.glb" type="PackedScene" id=3]
+
+[sub_resource type="CylinderShape" id=1]
+height = 5.04951
+
+[node name="character" type="KinematicBody"]
+transform = Transform( 1, 2.96577e-05, 0.000455298, -2.95649e-05, 1, -0.000219112, -0.000455304, 0.000219099, 1, 0, 4, 0 )
+script = ExtResource( 1 )
+
+[node name="FirstPersonCamera" type="Camera" parent="."]
+transform = Transform( -1, 6.91963e-09, -3.25439e-07, -2.77112e-13, 1, 9.31323e-10, 3.25846e-07, 0, -1, 3.91681e-05, 1.14281, 1.26751 )
+current = true
+
+[node name="character" type="MeshInstance" parent="."]
+transform = Transform( 1, 1.98952e-13, 1.16415e-10, 7.24754e-13, 1, 0, 0, 0, 1, 0.399103, -0.699619, 0.0415537 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, -1.06297e-11, 0, -1.02816e-11, 1, -8.73115e-11, 0, 0, 1, 3.885e-05, -1.31437, 0.000287994 )
+shape = SubResource( 1 )
+
+[node name="character2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, -1.53477e-12, 0, -1.21503e-12, 1, -1.45519e-11, 0, 0, 1, 3.29278, -1.70889, 3.14965 )

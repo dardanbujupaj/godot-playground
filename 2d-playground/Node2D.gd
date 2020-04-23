@@ -49,3 +49,8 @@ func _on_KinematicBody2D_mined_at(position):
 	$TileMap.set_cellv(map_point, -1)
 	
 	pass # Replace with function body.
+
+
+func _on_AnimatedSprite2_animation_finished():
+	if $KinematicBody2D/AnimatedSprite2.animation == "attack":
+		$KinematicBody2D/AnimatedSprite2.play("default")
